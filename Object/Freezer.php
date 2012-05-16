@@ -354,14 +354,10 @@ class Object_Freezer
 
         // Thaw object (if it has not been thawed before).
         if (!isset($objects[$root])) {
-            $className = $frozenObject['objects'][$root]['className'];
-            $state     = $frozenObject['objects'][$root]['state'];
-
-            // Use a trick to create a new object of a class
-            // without invoking its constructor.
-            $objects[$root] = unserialize(
-              sprintf('O:%d:"%s":0:{}', strlen($className), $className)
-            );
+            $className      = $frozenObject['objects'][$root]['className'];
+            $state          = $frozenObject['objects'][$root]['state'];
+            $reflector      = new ReflectionClass($className);
+            $objects[$root] = $reflector->newInstanceWithoutConstructor();
 
             // Handle aggregated objects.
             $this->thawArray($state, $frozenObject, $objects);
