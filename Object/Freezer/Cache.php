@@ -63,7 +63,7 @@ class Object_Freezer_Cache
      * Retrieves an object from the object cache.
      *
      * @param  string $id
-     * @return object
+     * @return object|false
      */
     public function get($id)
     {

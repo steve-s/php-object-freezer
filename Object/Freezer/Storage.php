@@ -202,7 +202,7 @@ abstract class Object_Freezer_Storage
      * Fetches a frozen object from the object storage and thaws it.
      *
      * @param  string $id The ID of the object that is to be fetched.
-     * @return object
+     * @return object|array
      */
     abstract protected function doFetch($id);
 }

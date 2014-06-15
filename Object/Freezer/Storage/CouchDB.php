@@ -196,7 +196,7 @@ class Object_Freezer_Storage_CouchDB extends Object_Freezer_Storage
      *
      * @param  string $id      The ID of the object that is to be fetched.
      * @param  array  $objects Only used internally.
-     * @return object
+     * @return object|array
      * @throws InvalidArgumentException
      * @throws RuntimeException
      */
