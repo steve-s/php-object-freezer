@@ -1,0 +1,2 @@
+Freezer\Cache.php:73:ReturnTypeMismatch
+Freezer\Storage\CouchDB.php:233:ReturnTypeMismatch
